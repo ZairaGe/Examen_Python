@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    environment:
+      # MUY IMPORTANTE: mysql-server es el nombre de tu contenedor de base de datos
+      DATABASE_URL: mysql+pymysql://root:4bretesesamO@mysql-server:3306/fastapi_incidentes
+    networks:
+      - mysql-net
+
+networks:
+  mysql-net:
+    external: true
