@@ -7,7 +7,7 @@ SECRET_KEY = "examen_secret_key_123"
 ALGORITHM = "HS256"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
-# Usuario fijo solicitado [cite: 33]
+
 USER_FIXED = {"username": "admin", "password": "password123"}
 
 def create_access_token(data: dict):
@@ -16,7 +16,7 @@ def create_access_token(data: dict):
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
-# ESTA ES LA FUNCIÓN QUE DABA EL ERROR
+
 def get_current_user(token: str = Depends(oauth2_scheme)):
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])

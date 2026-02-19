@@ -6,6 +6,6 @@ class Incidencia(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     titulo = Column(String(100))
-    descripcion = Column(String(255)) # <-- Asegúrate que NO tenga tilde
+    descripcion = Column(String(255)) 
     prioridad = Column(String(50))
     estado = Column(String(50))

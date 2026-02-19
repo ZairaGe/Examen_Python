@@ -3,12 +3,12 @@ from sqlalchemy.orm import Session
 from typing import List
 from pydantic import BaseModel
 
-# Importaciones locales
+
 from . import models, auth, database
 
 app = FastAPI(title="API de Gestión de Incidencias")
 
-# --- ESQUEMAS PYDANTIC (Para validación de datos) ---
+
 class IncidenciaBase(BaseModel):
     titulo: str
     descripcion: str
